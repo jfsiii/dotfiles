@@ -27,6 +27,9 @@
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
+	# Manage line endings
+	# https://help.github.com/articles/dealing-with-line-endings
+	autocrlf = input
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
