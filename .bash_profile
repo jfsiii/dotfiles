@@ -40,3 +40,9 @@ which grunt > /dev/null && eval "$(grunt --completion=bash)"
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# If possible, add completion for many npm commands
+command -v npm >/dev/null 2>&1 && \
+command -v brew >/dev/null 2>&1 && \
+if [ ! -f `brew --prefix`/etc/bash_completion.d/npm ]; then npm completion > `brew --prefix`/etc/bash_completion.d/npm; fi && \
+source `brew --prefix`/etc/bash_completion.d/npm
