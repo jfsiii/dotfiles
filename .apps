@@ -25,6 +25,7 @@ installcask imagealpha
 installcask imageoptim
 installcask iterm2
 installcask kaleidoscope
+installcask mou
 installcask one-password
 installcask opera
 installcask rdio
