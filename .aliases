@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+alias reload="source ~/.bash_profile"
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -19,6 +22,9 @@ alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
+alias gmm="git checkout master && git fetch && git pull origin && git checkout - && git merge master"
+alias gsm="git stash && gmm && git stash pop"
+alias gpc="git push origin $(git rev-parse --abbrev-ref HEAD)"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -50,7 +56,7 @@ alias gurl='curl --compressed'
 alias week='date +%V'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -132,7 +138,4 @@ done
 # reboot in Target Disk Mode
 alias reboottotargetdiskmode="sudo nvram target-mode=1; sudo reboot"
 
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 7'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+alias npm-exec='PATH=$(npm bin):$PATH'

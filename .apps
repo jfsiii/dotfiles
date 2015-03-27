@@ -1,6 +1,11 @@
 # Install native apps
-brew tap phinze/homebrew-cask
-brew install brew-cask
+# http://caskroom.io/
+brew install caskroom/cask/brew-cask
+
+
+# https://github.com/caskroom/homebrew-versions
+# The tap for beta/unstable package versions (Chrome Canary, Emacs Nightly, etc)
+brew tap caskroom/versions
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 function installcask() {
@@ -15,7 +20,7 @@ installcask adium
 installcask airfoil
 installcask alfred
 installcask arduino
-installcask brackets
+installcask clipmenu
 installcask dropbox
 installcask firefox
 installcask google-chrome
@@ -24,15 +29,27 @@ installcask hip-chat
 installcask imagealpha
 installcask imageoptim
 installcask iterm2
-installcask kaleidoscope
+installcask lastfm
+installcask launchcontrol
+installcask licecap
+installcask macdown
 installcask mou
-installcask one-password
-installcask opera
-installcask rdio
+installcask onepassword
+installcask qlcolorcode
+installcask qlmarkdown
+installcask qlprettypatch
+installcask qlstephen
+installcask quicklook-csv
+installcask quicklook-json
 installcask skype
+installcask smoothmouse
+installcask soundflower
 installcask sourcetree
-installcask spotify
-installcask sublime-text
+installcask sublime-text3
+installcask suspicious-package
 installcask the-unarchiver
 installcask transmission
+installcask virtualbox
 installcask vlc
+installcask webp-quicklook
+installcask x-quartz

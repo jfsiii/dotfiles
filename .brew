@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install Homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -14,8 +17,17 @@ brew install findutils
 # Install Bash 4
 brew install bash
 
+# doesn't work :(
+sudo echo `brew --prefix`/bin/bash >> /etc/shells
+
+# doesn't work?
+sudo dscl . change /users/$USER UserShell $SHELL `brew --prefix`/bin/bash
+
+# change shell
+chsh -s `brew --prefix`/bin/bash
+
 # Install wget with IRI support
-brew install wget --enable-iri
+#brew install wget --enable-iri
 
 # Install RingoJS and Narwhal
 # Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
