@@ -2,6 +2,12 @@
 
 # Install command-line tools using Homebrew.
 
+# Make sure we’re using Homebrew.
+which brew 1>/dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Save Homebrew's installed location
+BREW_PREFIX=$(brew --prefix)
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -11,7 +17,7 @@ brew upgrade --all
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
+ln -s $BREW_PREFIX/bin/gsha256sum $BREW_PREFIX/bin/sha256sum
 
 # Install some other useful utilities like `sponge`.
 brew install moreutils
@@ -27,9 +33,9 @@ brew tap homebrew/versions
 brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
-if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
+if ! fgrep -q "$BREW_PREFIX/bin/bash" /etc/shells; then
+  echo "$BREW_PREFIX/bin/bash" | sudo tee -a /etc/shells;
+  chsh -s $BREW_PREFIX/bin/bash;
 fi;
 
 # Install `wget` with IRI support.
@@ -38,21 +44,25 @@ brew install wget --with-iri
 # Install RingoJS and Narwhal.
 # Note that the order in which these are installed is important;
 # see http://git.io/brew-narwhal-ringo.
-brew install ringojs
-brew install narwhal
+# brew install ringojs
+# brew install narwhal
 
 # Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
+# brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
-brew install homebrew/php/php56 --with-gmp
+# brew install homebrew/php/php56 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
 brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
+
+# https://github.com/vvo/gifify#requirements
+brew install ffmpeg --with-libass --with-fontconfig
+brew install imagemagick --with-fontconfig --with-webp
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install aircrack-ng
@@ -86,20 +96,20 @@ brew install dark-mode
 #brew install exiv2
 brew install git
 brew install git-lfs
-brew install imagemagick --with-webp
+# brew install imagemagick --with-webp
 brew install lua
-brew install lynx
+# brew install lynx
 brew install p7zip
 brew install pigz
 brew install pv
 brew install rename
-brew install rhino
+# brew install rhino
 brew install speedtest_cli
 brew install ssh-copy-id
 brew install testssl
 brew install tree
 brew install vbindiff
-brew install webkit2png
+# brew install webkit2png
 brew install zopfli
 
 # Remove outdated versions from the cellar.
