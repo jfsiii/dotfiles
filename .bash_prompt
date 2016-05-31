@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+## bash-it
 THISDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $THISDIR/colors.bash
 source $THISDIR/scm_prompt.bash
@@ -6,7 +8,7 @@ source $THISDIR/scm_prompt.bash
 SCM_THEME_PROMPT_DIRTY="${red}✗${normal}"
 SCM_THEME_PROMPT_CLEAN="${green}✓${normal}"
 
-function prompt_command()
+function _bashit_prompt()
 {
     # call function which creates the various `$SCM_*` variables
     scm_prompt_vars
@@ -26,4 +28,9 @@ function prompt_command()
     PS1="$SCM_CHAR $dir $scm_info$end "
 }
 
-PROMPT_COMMAND=prompt_command
+## powerline-shell
+function _powerline_prompt() {
+    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+}
+
+PROMPT_COMMAND=_powerline_prompt

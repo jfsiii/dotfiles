@@ -22,9 +22,9 @@ alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
-alias gmm="git checkout master && git fetch && git pull origin && git checkout - && git merge master"
+alias gmm="git checkout master && git pull origin && git checkout - && git merge master"
 alias gsm="git stash && gmm && git stash pop"
-alias gpc="git push origin $(git rev-parse --abbrev-ref HEAD)"
+alias gpc="git push origin $(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -56,7 +56,7 @@ alias gurl='curl --compressed'
 alias week='date +%V'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade --all; brew cleanup; sudo gem update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -139,3 +139,5 @@ done
 alias reboottotargetdiskmode="sudo nvram target-mode=1; sudo reboot"
 
 alias npm-exec='PATH=$(npm bin):$PATH'
+alias smartdnson="sudo networksetup -setdnsservers Wi-Fi 192.162.27.100 54.229.171.243"
+alias smartdnsoff="sudo networksetup -setdnsservers Wi-Fi 172.24.6.11 172.24.6.10 8.8.8.8"

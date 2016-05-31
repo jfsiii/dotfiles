@@ -1,5 +1,7 @@
-# Make Sublime Text the default editor
-export EDITOR="subl -w"
+# Set the default editor
+export EDITOR="atom -nvw"
+
+export LANG=en_US.UTF-8
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
