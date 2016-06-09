@@ -147,8 +147,9 @@ done
 # reboot in Target Disk Mode
 alias reboottotargetdiskmode="sudo nvram target-mode=1; sudo reboot"
 
-alias smartdnson="sudo networksetup -setdnsservers Wi-Fi 192.162.27.100 54.229.171.243"
-alias smartdnsoff="sudo networksetup -setdnsservers Wi-Fi 172.24.6.11 172.24.6.10 8.8.8.8"
+alias smartdns="sudo networksetup -setdnsservers Wi-Fi 192.162.27.100 54.229.171.243"
+alias workdns="sudo networksetup -setdnsservers Wi-Fi 172.24.6.11 172.24.6.10 8.8.8.8"
+alias homedns="sudo networksetup -setdnsservers Wi-Fi 8.8.8.8"
 
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
