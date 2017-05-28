@@ -1,10 +1,9 @@
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
+source /opt/twitter_mde/etc/bash_profile
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/dotfiles/.{path,exports,aliases,functions,extra,bash_prompt}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -47,8 +46,8 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
-# Autocomplete Grunt commands
-which grunt > /dev/null && eval "$(grunt --completion=bash)"
+# Faster git autocomplete?
+complete -o default -W "\$(git branch 2>/dev/null | cut -c 3-)" git
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
@@ -58,5 +57,3 @@ command -v npm >/dev/null 2>&1 && \
 command -v brew >/dev/null 2>&1 && \
 if [ ! -f `brew --prefix`/etc/bash_completion.d/npm ]; then npm completion > `brew --prefix`/etc/bash_completion.d/npm; fi && \
 source `brew --prefix`/etc/bash_completion.d/npm
-
-complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;

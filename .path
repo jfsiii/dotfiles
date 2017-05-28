@@ -1,4 +1,7 @@
 export PATH="$HOME/bin:/opt/twitter/bin:/opt/twitter/sbin:~/node_modules/.bin:/opt/twitter/share/npm/bin:/usr/local/bin:/usr/local/sbin:~/node_modules/.bin:/usr/local/share/npm/bin:$PATH"
-export PATH=$PATH:~/src/android/sdk/platform-tools
+#export PATH=$PATH:~/src/android/sdk/platform-tools
 ##export NODE_PATH="/opt/twitter/share/npm/lib/node_modules:${NODE_PATH}"
 export NODE_PATH=/opt/twitter/lib/node_modules:$NODE_PATH
+export PATH="$PATH:$HOME/bin";
+export PATH="$PATH:$(brew --prefix coreutils)/libexec/gnubin";
+export PATH="$PATH:$(npm get prefix)";
