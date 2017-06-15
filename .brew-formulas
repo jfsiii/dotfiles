@@ -1,6 +1,5 @@
 ack
 adns
-apple-gcc42
 asciinema
 autoconf
 automake
@@ -89,7 +88,6 @@ pixman
 pkg-config
 pngquant
 protobuf
-protobuf230
 pth
 pv
 python
@@ -109,7 +107,6 @@ ssh-copy-id
 swig
 testssl
 texi2html
-thrift05
 tree
 twemcache
 unixodbc
