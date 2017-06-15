@@ -28,12 +28,7 @@ function _bashit_prompt()
     PS1="$SCM_CHAR $dir $scm_info$end "
 }
 
-## powerline-shell
-function _powerline_prompt() {
-    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
-}
-
-PROMPT_COMMAND=_powerline_prompt
+PROMPT_COMMAND=_bashit_prompt
 
 # Shell prompt based on the Solarized Dark theme.
 # Screenshot: http://i.imgur.com/EkEtphC.png
