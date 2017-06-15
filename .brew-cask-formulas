@@ -5,6 +5,7 @@ anatine
 arduino
 atom-beta
 charles
+chromium
 clipmenu
 dropbox
 emacs-mac
@@ -17,6 +18,7 @@ imageoptim
 insomnia
 iterm2
 iterm2-nightly
+kap
 lastfm
 launchcontrol
 licecap
@@ -30,18 +32,20 @@ qlprettypatch
 qlstephen
 quicklook-csv
 quicklook-json
+rescuetime
 skype
 slack
 smoothmouse
 soundflower
 sourcetree
 sublime-text
-sublime-text3 (!)
+sublime-text3
 suspicious-package
 the-unarchiver
 transmission
 virtualbox
 visual-studio-code
 vlc
+vlc-nightly
 webstorm
 xquartz-beta
