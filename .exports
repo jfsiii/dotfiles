@@ -3,6 +3,11 @@
 # Set the default editor
 export EDITOR="emacs -nw"
 
+# prevents gpg-related errors when committing, e.g.:
+# error: gpg failed to sign the data
+# fatal: failed to write commit object
+export GPG_TTY=$(tty)
+
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
 # Allow 32³ entries; the default is 1000.
